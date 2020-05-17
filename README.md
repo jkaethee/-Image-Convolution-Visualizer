@@ -18,7 +18,7 @@ Clone this repository. You will need `python`, `virtualenv`, and `virtualenvwrap
 
 #### Set up a virtual environment:
 
-`mkvirtualenv FlaskWeatherApp`
+`mkvirtualenv ImageConvolutionEnv`
 
 #### Installation:
 
