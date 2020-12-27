@@ -24,7 +24,7 @@ Clone this repository. You will need `python`, `virtualenv`, and `virtualenvwrap
 
 `pip install flask`, `pip install flask_sqlalchemy`, `pip install requests` 
 
-`pip install numpy`,  `pip install opencv-python`, `pip install scikit-image`
+`pip install numpy`,  `pip install opencv-python`, `pip install scikit-image`, `pip install Pillow`
 
 #### To Start Server:
 **Please Note:** Currently, due to a caching issue, users must open DevTools in their browser and disable cache in order to see updated convoluted images! This issue will be fixed in future patches.
