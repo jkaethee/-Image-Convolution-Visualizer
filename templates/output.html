@@ -31,7 +31,7 @@
                     <img alt="Original Picture" src="/static/iu.jpg" />
                 </figure>
             </div>
-            <div class="column is-one-third">
+            <div class="column is-one-third" style="display: flex; justify-content: center;">
                 <form method="POST" action="{{ url_for('apply_convolution') }}">
                     <label for="convolutions">Choose a kernel:</label>
                     <select id="convolutions"name = "convolution_type">
