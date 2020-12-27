@@ -9,13 +9,20 @@ from skimage.exposure import rescale_intensity
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
-
+# prevent cached responses
+if app.config["DEBUG"]:
+    @app.after_request
+    def after_request(response):
+        response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, public, max-age=0"
+        response.headers["Expires"] = 0
+        response.headers["Pragma"] = "no-cache"
+        return response
 
 @app.route('/')
 def index_get():
     # Remove the new image on refresh on main page
-    if os.path.exists('static/new/newImage.jpg'):
-        os.remove('static/new/newImage.jpg')
+    if os.path.exists('static/newImage.jpg'):
+        os.remove('static/newImage.jpg')
     return render_template('main.html')
 
 @app.route('/newImage/<name>')
@@ -24,9 +31,9 @@ def add_newImg(name):
 
 @app.route('/convolutions', methods=["POST"])
 def apply_convolution():
-     # Remove the new image from directory on submit
-    if os.path.exists('static/new/newImage.jpg'):
-        os.remove('static/new/newImage.jpg')
+    # Remove the new image from directory on submit
+    if os.path.exists('static/newImage.jpg'):
+        os.remove('static/newImage.jpg')
 
     # Read original image in greyscale
     originalImage = cv2.imread('static/iu.jpg',cv2.IMREAD_GRAYSCALE)
