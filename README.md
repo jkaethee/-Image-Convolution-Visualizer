@@ -22,7 +22,7 @@ Clone this repository. You will need `python`, `virtualenv`, and `virtualenvwrap
 
 #### Installation:
 
-`pip install flask`, `pip install flask_sqlalchemy`, `pip install requests` 
+`pip install flask`, `pip install flask_sqlalchemy`, `pip install requests`,  `pip install python-dotenv` 
 
 `pip install numpy`,  `pip install opencv-python`, `pip install scikit-image`, `pip install Pillow`
 
