@@ -7,7 +7,7 @@ The project is intended to practice development with Python libraries such as Nu
 It also reinforces our web development skills with Python by allowing us to utilize Flask's framework for rapid development.
 
 ## Project Status
-This project is completed. 
+This project is complete. 
 
 #### Example:   
 ![Image description](https://github.com/jkaethee/Image-Convolution-Visualizer/blob/master/image%20convolution%20examples.PNG)
