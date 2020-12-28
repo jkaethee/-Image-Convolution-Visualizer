@@ -27,7 +27,7 @@ def index_get():
 
 @app.route('/newImage/<name>')
 def add_newImg(name):
-    return render_template('output.html')
+    return render_template('output.html', type=name)
 
 @app.route('/convolutions', methods=["POST"])
 def apply_convolution():
@@ -61,13 +61,29 @@ def BoxBlur():
 def GaussianBlur():
     gblur = np.array([[1,2,1],[2,4,2],[1,2,1]],dtype='int') / 16 
     return gblur
+def LeftSobel():
+    leftsobel = np.array([[1,0,-1],[2,0,-2],[1,0,-1]],dtype='int')
+    return leftsobel
+def RightSobel():
+    rightsobel = np.array([[-1,0,1],[-2,0,2],[-1,0,1]],dtype='int')
+    return rightsobel
+def TopSobel():
+    topsobel = np.array([[1,2,1],[0,0,0],[-1,-2,-1]],dtype='int')
+    return topsobel
+def BottomSobel():
+    bottomsobel = np.array([[-1,-2,-1],[0,0,0],[1,2,1]],dtype='int')
+    return bottomsobel
 
 kernelDict = {
     "Identity": Identity,
     "Sharpen": Sharpen,
     "EdgeDetection": EdgeDetection,
     "BoxBlur": BoxBlur,
-    "GaussianBlur": GaussianBlur
+    "GaussianBlur": GaussianBlur,
+    "LeftSobel": LeftSobel,
+    "RightSobel": RightSobel,
+    "TopSobel": TopSobel,
+    "BottomSobel": BottomSobel,
 }
 # Function to access kernel dictionary for corresponding kernel
 def pick_convolution_type(name):
